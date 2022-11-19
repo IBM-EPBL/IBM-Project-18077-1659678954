@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ibm-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ibm
+  template:
+    metadata:
+      labels:
+        app: ibm
+    spec:
+      containers:
+        - name: ibm
+          image: au.icr.io/ibm-pbl/pbl-app:test
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000

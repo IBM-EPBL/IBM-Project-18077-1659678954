@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+
+<!-- Mirrored from new.axilthemes.com/demo/template/abstrak/index-2.html by HTTrack Website Copier/3.x [XR&CO'2017], Thu, 17 Nov 2022 10:31:58 GMT -->
+<head>
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>News Tracker Application</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+ <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='news.png')}}')}}')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='assets/css/vendor/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='assets/css/vendor/font-awesome.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='assets/css/vendor/slick.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='assets/css/vendor/slick-theme.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='assets/css/vendor/sal.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='assets/css/vendor/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='assets/css/vendor/green-audio-player.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='assets/css/vendor/odometer-theme-default.css')}}">
+
+    <!-- Site Stylesheet -->
+    <link rel="stylesheet" href="{{url_for('static', filename='assets/css/app.css')}}">
+
+
+</head>
+
+<body class="sticky-header">
+    <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  	<![endif]-->
+    <a href="#main-wrapper" id="backto-top" class="back-to-top">
+        <i class="far fa-angle-double-up"></i>
+    </a>
+
+    <!-- Preloader Start Here -->
+    <div id="preloader"></div>
+    <!-- Preloader End Here -->
+
+    <div class="my_switcher d-none d-lg-block">
+        <ul>
+            <li title="Light Mode">
+                <a href="javascript:void(0)" class="setColor light" data-theme="light">
+                    <i class="fal fa-lightbulb-on"></i>
+                </a>
+            </li>
+            <li title="Dark Mode">
+                <a href="javascript:void(0)" class="setColor dark" data-theme="dark">
+                    <i class="fas fa-moon"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="main-wrapper" class="main-wrapper">
+
+        <!--=====================================-->
+        <!--=        Header Area Start       	=-->
+        <!--=====================================-->
+        <header class="header axil-header header-style-2">
+            <div id="axil-sticky-placeholder"></div>
+            <div class="axil-mainmenu">
+                <div class="container-fluid">
+                    <div class="header-navbar">
+                        <div class="header-logo">
+                           <h5>News Tracker</h5>
+                        </div>
+                        <div class="header-main-nav">
+                            <!-- Start Mainmanu Nav -->
+<nav class="mainmenu-nav" id="mobilemenu-popup">
+                                <div class="d-block d-lg-none">
+                                    <div class="mobile-nav-header">
+                                        <div class="mobile-nav-logo">
+                                            <a href="/">
+                                                <img class="light-mode" src="{{url_for('static', filename='assets/media/logo-2.svg')}}" alt="Site Logo">
+                                                <img class="dark-mode" src="{{url_for('static', filename='assets/media/logo-3.svg')}}" alt="Site Logo">
+                                            </a>
+                                        </div>
+                                        <button class="mobile-menu-close" data-bs-dismiss="offcanvas"><i class="fas fa-times"></i></button>
+                                    </div>
+                                </div>
+                                <ul class="mainmenu">
+                                    <li class="menu-item-open">
+                                        <a href="/">Home</a>
+                                    </li>
+                                    <li class="menu-item-open">
+                                        <a href="https://github.com/IBM-EPBL/IBM-Project-18077-1659678954">GitHub</a>
+                                    </li>
+                                    {% if data[0] %}
+                                        <li class="menu-item-open">
+                                        <a href="/news">News</a>
+                                    </li>
+                                    {% else %}
+                                         <li class="menu-item-open">
+                                        <a href="/login">Login</a>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                            </nav>                            <!-- End Mainmanu Nav -->
+                        </div>
+                        <div class="header-action">
+                            <ul class="list-unstyled">
+                                <li class="sidemenu-btn d-lg-block d-none">
+                                    <button class="btn-wrap btn-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenuRight">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </button>
+                                </li>
+                                <li class="mobile-menu-btn sidemenu-btn d-lg-none d-block">
+                                    <button class="btn-wrap btn-dark" data-bs-toggle="offcanvas" data-bs-target="#mobilemenu-popup">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </button>
+                                </li>
+                                <li class="my_switcher d-block d-lg-none">
+                                    <ul>
+                                        <li title="Light Mode">
+                                            <a href="javascript:void(0)" class="setColor light" data-theme="light">
+                                                <i class="fal fa-lightbulb-on"></i>
+                                            </a>
+                                        </li>
+                                        <li title="Dark Mode">
+                                            <a href="javascript:void(0)" class="setColor dark" data-theme="dark">
+                                                <i class="fas fa-moon"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <!--=====================================-->
+        <!--=        Banner Area Start         =-->
+        <!--=====================================-->
+        <section class="banner banner-style-2">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="banner-content" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="100">
+                            <h1 class="title">NewsTracker📰 Application🗞️</h1>
+                            {% if data[0] %}
+                            <a href="/news" class="axil-btn btn-fill-white btn-large">View News</a>
+                            {% else %}
+                            <a href="/register" class="axil-btn btn-fill-white btn-large">Register Now</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="list-unstyled shape-group-18">
+                <li class="shape shape-1" data-sal="slide-left" data-sal-duration="1000" data-sal-delay="100"><img src="{{url_for('static', filename='assets/media/banner/banner-shape-1.png')}}" alt="Shape"></li>
+                <li class="shape shape-2" data-sal="slide-right" data-sal-duration="1000" data-sal-delay="100"><img src="{{url_for('static', filename='assets/media/banner/banner-shape-2.png')}}" alt="Shape"></li>
+                <li class="shape shape-3" data-sal="zoom-in" data-sal-duration="500" data-sal-delay="600"><img src="{{url_for('static', filename='assets/media/others/bubble-16.png')}}" alt="Shape"></li>
+                <li class="shape shape-4" data-sal="zoom-in" data-sal-duration="500" data-sal-delay="600"><img src="{{url_for('static', filename='assets/media/others/bubble-15.png')}}" alt="Shape"></li>
+                <li class="shape shape-5" data-sal="zoom-in" data-sal-duration="500" data-sal-delay="600"><img src="{{url_for('static', filename='assets/media/others/bubble-14.png')}}" alt="Shape"></li>
+                <li class="shape shape-6" data-sal="zoom-in" data-sal-duration="500" data-sal-delay="600"><img src="{{url_for('static', filename='assets/media/others/bubble-16.png')}}" alt="Shape"></li>
+                <li class="shape shape-7" data-sal="slide-down" data-sal-duration="500" data-sal-delay="600"><img src="{{url_for('static', filename='assets/media/others/bubble-26.png')}}" alt="Shape"></li>
+            </ul>
+        </section>
+        <!--=====================================-->
+        <!--=        Service Area Start         =-->
+        <!--=====================================-->
+        <section class="section section-padding">
+            <div class="container">
+                <div class="section-heading heading-left mb--20 mb_md--70">
+                    <span class="subtitle">IBM - PBL</span>
+                    <h2 class="title">Naliyathiran <br> Project</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 mt--200 mt_md--0" data-sal="slide-up" data-sal-duration="800" data-sal-delay="100">
+                        <div class="services-grid service-style-2">
+                            <div class="thumbnail">
+                                <img src="{{url_for('static', filename='assets/media/icon/icon-1.png')}}" alt="icon">
+                            </div>
+                            <div class="content">
+                                <h5 class="title"> <a href="#">News</a></h5>
+                                <p>Get All News Instantly with the search feature...</p>
+                                <a href="{% if data[0] %} /news {% else %} /login {% endif %}" class="more-btn">Find out more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt--100 mt_md--0" data-sal="slide-up" data-sal-duration="800" data-sal-delay="200">
+                        <div class="services-grid service-style-2 active">
+                            <div class="thumbnail">
+                                <img src="{{url_for('static', filename='assets/media/icon/icon-2.png')}}" alt="icon">
+                            </div>
+                            <div class="content">
+                                <h5 class="title"> <a href="#">NEWS API</a></h5>
+                                <p>Get multiple source of news in one place</p>
+                                <a href="{% if data[0] %} /news {% else %} /login {% endif %}" class="more-btn">Find out more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" data-sal="slide-up" data-sal-duration="800" data-sal-delay="300">
+                        <div class="services-grid service-style-2">
+                            <div class="thumbnail">
+                                <img src="{{url_for('static', filename='assets/media/icon/icon-6.png')}}" alt="icon">
+                            </div>
+                            <div class="content">
+                                <h5 class="title"> <a href="#">Interface</a></h5>
+                                <p>Interactive Interface and content images</p>
+                                <a href="{% if data[0] %} /news {% else %} /login {% endif %}" class="more-btn">Find out more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="shape-group-7 list-unstyled">
+                <li class="shape shape-1"><img src="{{url_for('static', filename='assets/media/others/circle-2.png')}}" alt="circle"></li>
+                <li class="shape shape-2"><img src="{{url_for('static', filename='assets/media/others/bubble-2.png')}}" alt="Line"></li>
+                <li class="shape shape-3"><img src="{{url_for('static', filename='assets/media/others/bubble-1.png')}}" alt="Line"></li>
+            </ul>
+        </section>
+        <!--=====================================-->
+        <!--=        Project Area Start         =-->
+        <!--=====================================-->
+        <section class="section section-padding-2 bg-color-light">
+            <div class="container">
+                <div class="section-heading heading-left">
+                    <span class="subtitle">From BBC</span>
+                    <h2 class="title">Top Headlines</h2>
+                </div>
+                <div class="axil-isotope-wrapper">
+                    <div class="isotope-button isotope-project-btn">
+                        <button data-filter="*" class="is-checked"><span class="filter-text">All geners</span></button>
+                    </div>
+                    <div class="row row-35 isotope-list">
+                        {% for title,desc,img,p_date,url, auth in data[2] %}
+                        <div class="col-md-6 project branding">
+                            <div class="project-grid">
+                                <div class="thumbnail">
+                                    <a href="{{ url }}">
+                                        <img src="{{ img }}" alt="{{ title }}">
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="title"><a href="{{ url }}">{{ title }}</a></h4>
+                                    <span class="subtitle">{{ desc}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <ul class="shape-group-7 list-unstyled">
+                <li class="shape shape-1"><img src="{{url_for('static', filename='assets/media/others/circle-2.png')}}" alt="circle"></li>
+                <li class="shape shape-2"><img src="{{url_for('static', filename='assets/media/others/bubble-2.png')}}" alt="Line"></li>
+                <li class="shape shape-3"><img src="{{url_for('static', filename='assets/media/others/bubble-1.png')}}" alt="Line"></li>
+            </ul>
+        </section>
+
+     <section class="section section-padding bg-color-dark pb--70 pb_lg--20 pb_md--0">
+            <div class="container">
+                <div class="section-heading heading-light">
+                    <span class="subtitle">Our Team</span>
+                    <h2 class="title mb--50">Meet The Team</h2>
+                    <p>Interpretation and development is been a capability of developers</p>
+                </div>
+                <div class="row">
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="team-grid active">
+                            <div class="thumbnail">
+                                <a href="https://www.google.com/search?q=Sabarish+Sanjeevi">
+                                    <img src="{{url_for('static', filename='sabarish.jpg')}}" alt="Sabarish Sanjeevi">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h4 class="title"><a href="https://www.google.com/search?q=Sabarish+Sanjeevi">Sabarish Sanjeevi</a></h4>
+                                <span class="designation">Full Stack</span>
+                                <span class="designation">Developer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="team-grid">
+                            <div class="thumbnail">
+                                <a href="#">
+                                    <img src="{{url_for('static', filename='raghul.jpg')}}" alt="Raghul V">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h4 class="title"><a href="#">Raghul V</a></h4>
+                                <span class="designation">Documentation</span>
+                                <span class="designation">Specialist</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="team-grid">
+                            <div class="thumbnail">
+                                <a href="#">
+                                    <img src="{{url_for('static', filename='vishal.jpg')}}" alt="Team Member">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h4 class="title"><a href="#">Vishal R</a></h4>
+                                <span class="designation">Testing</span>
+                                <span class="designation">Specialist</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="team-grid">
+                            <div class="thumbnail">
+                                <a href="#">
+                                    <img src="{{url_for('static', filename='sanjay.jpg')}}" alt="Team Member">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h4 class="title"><a href="#">Sanjay D</a></h4>
+                                <span class="designation">Python Programmer</span>
+                                <span class="designation">Developer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="list-unstyled shape-group-10">
+                <li class="shape shape-1"><img src="{{url_for('static', filename='assets/media/others/circle-1.png')}}" alt="Circle"></li>
+                <li class="shape shape-2"><img src="{{url_for('static', filename='assets/media/others/line-3.png')}}" alt="Circle"></li>
+                <li class="shape shape-3"><img src="{{url_for('static', filename='assets/media/others/bubble-5.png')}}" alt="Circle"></li>
+            </ul>
+        </section>
+
+
+         <section class="section call-to-action-area">
+            <div class="container">
+                <div class="call-to-action">
+                    <div class="section-heading heading-light">
+                        <span class="subtitle">IBM Project Based Learning</span>
+                        <h2 class="title">The News Tracker Application</h2>
+                    </div>
+                    <div class="thumbnail">
+                        <div class="larg-thumb" data-sal="zoom-in" data-sal-duration="600" data-sal-delay="100">
+                            <img class="paralax-image" src="{{url_for('static', filename='assets/media/others/chat-group.png')}}" alt="Chat">
+                        </div>
+                        <ul class="list-unstyled small-thumb">
+                            <li class="shape shape-1" data-sal="slide-right" data-sal-duration="800" data-sal-delay="400">
+                                <img class="paralax-image" src="{{url_for('static', filename='assets/media/others/laptop-poses.png')}}" alt="Laptop">
+                            </li>
+                            <li class="shape shape-2" data-sal="slide-left" data-sal-duration="800" data-sal-delay="300">
+                                <img class="paralax-image" src="{{url_for('static', filename='assets/media/others/bill-pay.png')}}" alt="Bill">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <ul class="list-unstyled shape-group-9">
+                <li class="shape shape-1"><img src="{{url_for('static', filename='assets/media/others/bubble-12.png')}}" alt="Comments"></li>
+                <li class="shape shape-2"><img src="{{url_for('static', filename='assets/media/others/bubble-16.png')}}" alt="Comments"></li>
+                <li class="shape shape-3"><img src="{{url_for('static', filename='assets/media/others/bubble-13.png')}}" alt="Comments"></li>
+                <li class="shape shape-4"><img src="{{url_for('static', filename='assets/media/others/bubble-14.png')}}" alt="Comments"></li>
+                <li class="shape shape-5"><img src="{{url_for('static', filename='assets/media/others/bubble-16.png')}}" alt="Comments"></li>
+                <li class="shape shape-6"><img src="{{url_for('static', filename='assets/media/others/bubble-15.png')}}" alt="Comments"></li>
+                <li class="shape shape-7"><img src="{{url_for('static', filename='assets/media/others/bubble-16.png')}}" alt="Comments"></li>
+            </ul>
+        </section>
+        <!--=====================================-->
+        <!--=        Footer Area Start       	=-->
+        <!--=====================================-->
+       <footer class="footer-area">
+            <div class="container">
+                <div class="footer-bottom" data-sal="slide-up" data-sal-duration="500" data-sal-delay="100">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="footer-copyright">
+                                <span class="copyright-text">Developed with ❤ by Sabarish, Sanjay, Vishal, Raghul.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+        <div class="offcanvas offcanvas-end header-offcanvasmenu" tabindex="-1" id="offcanvasMenuRight">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <form action="/search" method="post" role="search" class="side-nav-search-form">
+                    <div class="form-group">
+                        <input type="search" class="search-field" name="nm" placeholder="Search...">
+                        <button class="side-nav-search-btn" type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                </form>
+                <div class="row ">
+                    <div class="col-lg-5 col-xl-6">
+                        <ul class="main-navigation list-unstyled">
+                            <li><a href="#">Developed By...</a></li>
+                            <li><a href="#">Sabarish S</a></li>
+                            <li><a href="#">Sanjay D</a></li>
+                            <li><a href="#">Raghul V</a></li>
+                            <li><a href="#">Vishal R</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{url_for('static', filename='assets/js/vendor/jquery-3.6.0.min.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/vendor/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/vendor/isotope.pkgd.min.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/vendor/imagesloaded.pkgd.min.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/vendor/odometer.min.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/vendor/jquery-appear.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/vendor/slick.min.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/vendor/sal.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/vendor/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/vendor/js.cookie.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/vendor/jquery.style.switcher.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/vendor/jquery.countdown.min.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/vendor/tilt.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/vendor/green-audio-player.min.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/vendor/jquery.nav.js')}}"></script>
+
+    <!-- Site Scripts -->
+    <script src="{{url_for('static', filename='assets/js/app.js')}}"></script>
+</body>
+
+
+<!-- Mirrored from new.axilthemes.com/demo/template/abstrak/index-2.html by HTTrack Website Copier/3.x [XR&CO'2017], Thu, 17 Nov 2022 10:32:01 GMT -->
+</html>
